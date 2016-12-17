@@ -19,7 +19,7 @@ func InitData() {
 func InsertConfig() {
 	fmt.Println("insert config start")
 	c := new(blog.Config)
-	c.Title = "广州智干电子商务大数据智能平台"
+	c.Title = "大数据智能平台"
 	err := c.Insert()
 	if err != nil {
 		fmt.Println(err.Error())
