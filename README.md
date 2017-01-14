@@ -67,7 +67,7 @@ bee run
 ```
 server{
         listen 80;
-        server_name beauty.lenggirl.com www.beautyart.top;
+        server_name bi.lenggirl.com bi.smartdo.xin;
         charset utf-8;
         access_log /data/logs/nginx/beauty.lenggirl.com.log;
         #error_log /data/logs/nginx/www.lenggirl.com.err;
@@ -76,9 +76,10 @@ server{
         proxy_set_header Host $http_host;
         proxy_redirect off;
         proxy_pass http://localhost:8080;
+        proxy_set_header X-real-ip $remote_addr;
         }
-        
 }
+
 ```
 
 server_name和proxy_pass需要改
