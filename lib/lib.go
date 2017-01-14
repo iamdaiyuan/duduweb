@@ -223,7 +223,9 @@ func Rawurlencode(str string) string {
 //获取用户IP地址
 func GetClientIp(this *context.Context) string {
 	s := strings.Split(this.Request.RemoteAddr, ":")
+	//fmt.Println(s[0])
 	if s[0] == "127.0.0.1" {
+		fmt.Printf("%#v\n",this.Request.Header)
 		if v, ok := this.Request.Header["X-real-ip"]; ok {
 			if len(v) > 0 {
 				return v[0]
